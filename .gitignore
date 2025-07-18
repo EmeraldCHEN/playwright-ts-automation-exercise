@@ -1,0 +1,41 @@
+# Node dependencies => Avoid committing installed dependencies
+node_modules/ 
+
+# Build output => Ignore compiled output
+dist/
+out/
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment variables => Keep API keys/secrets safe
+.env
+.env.*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Editor/IDE => Ignore local IDE configs, unnecessary for others
+.vscode/
+.idea/
+
+# Playwright test output => Avoid checking in test artifacts
+test-results/
+playwright-report/
+
+# Sometimes Playwright saves trace archives as ZIP
+*.zip  
+
+# Coverage reports => Ignore tools like nyc or vitest with coverage if any
+coverage/
+*.lcov
+
+# TypeScript cache => TypeScript incremental build cache
+*.tsbuildinfo
+
+# Lock files 
+package-lock.json
