@@ -11,7 +11,7 @@ logs/
 *.log
 npm-debug.log*
 
-# Environment variables => Keep API keys/secrets safe
+# Environment variables => Keep credentials and API keys/secrets safe
 .env
 .env.*
 

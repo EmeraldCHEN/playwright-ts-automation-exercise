@@ -142,6 +142,19 @@ npx playwright install
   
   - See more details on [Reporters](https://playwright.dev/docs/test-reporters)
 
+
+  - Ensure `.gitignore` file is placed at the root level if you want it applied globally
+
+  - Make sure there's no accidental whitespace or file extension (`.node_modules`, for example), and double check to ensure it's correct `.gitignore` syntax
+  
+  - If `node_modules/` or other files are listed in your `.gitignore` file but it's still showing up in your GitHub repo, it might be because Git doesn't automatically untrack files that were added before before ignored. You can fremoves the folder from Git tracking. E.g. `node_modules/` would disappear from GitHub if you run:
+
+  ```ts 
+  git rm -r --cached node_modules/
+  git commit -m "Remove node_modules from repo"
+  git push
+  ```
+
   - 📚 More Resources
   
   - [Test generator](https://playwright.dev/docs/codegen)
