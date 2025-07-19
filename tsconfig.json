@@ -11,6 +11,7 @@
       "@CartPage": ["ui/pages/CartPage"],
       "@CheckoutPage": ["ui/pages/CheckoutPage"],
       "@PaymentPage": ["ui/pages/PaymentPage"],
+      "@Navbar": ["ui/pages/Navbar"],
       "@test-data/userData": ["ui/test-data/userData"],
       "@test.config": ["configs/test.config.ts"],
       "@utils/*": ["utilities/*"]
