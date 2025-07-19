@@ -27,6 +27,8 @@ Practice project for UI & API test automation using Playwright in TypeScript, wi
       - userClient.ts
     - tests/   => API test specs
       - loginAPI.test.ts
+  - wiki/   => Useful info
+    - ......
   - .gitignore
   - playwright.config.ts   => Playwright test runner configuration
   - package-lock.json
