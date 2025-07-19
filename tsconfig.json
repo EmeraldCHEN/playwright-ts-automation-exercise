@@ -14,7 +14,7 @@
       "@Navbar": ["ui/pages/Navbar"],
       "@test-data/userData": ["ui/test-data/userData"],
       "@test.config": ["configs/test.config.ts"],
-      "@utils/*": ["utilities/*"]
+      "@UserClient": ["api/clients/userClient"],
       // Add other explicit aliases as needed to keep imports clear, maintainable, and IDE-friendly
     },
     "strict": true,
