@@ -7,4 +7,5 @@ dotenv.config({ path: path.resolve(__dirname, `../env/.env.${env}`) });
 
 export const config = {
   baseURL: process.env.BASE_URL!,
+  password: process.env.PASSWORD,
 };

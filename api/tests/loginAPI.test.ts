@@ -1,16 +1,13 @@
 import { test, expect, request } from '@playwright/test';
-import { faker } from '@faker-js/faker';
 import { UserClient } from '@UserClient';
 
 // Already created a new user via UI, since there's no public API for registration
 test.describe('User API - Verify Login', () => {
-  const validEmail = 'XYZABC@test.com';
-  const validPassword = 'XYZABCTEST.com123';
-  const userName = 'XYZ';
+  const validEmail = 'XYZABC@testy.com';
 
   test('API 7: POST To Verify Login with valid details', async ({ request }) => {
     const userClient = new UserClient(request);
-    const response = await userClient.verifyLogin(validEmail, validPassword);
+    const response = await userClient.verifyLogin(validEmail, userClient.getPassword);
 
     expect(response.responseCode).toBe(200);
     expect(response.message).toBe('User exists!');
@@ -20,7 +17,7 @@ test.describe('User API - Verify Login', () => {
     const userClient = new UserClient(request);
     const res = await request.post(userClient.getLoginUrl, {
       form: {
-        password: validPassword,
+        password: userClient.getPassword,
       },
     });
 

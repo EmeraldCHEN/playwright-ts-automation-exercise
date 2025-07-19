@@ -43,16 +43,6 @@ Practice project for UI & API test automation using Playwright in TypeScript, wi
 
 - Playwright docs => See [Playwright Docs](https://playwright.dev/docs/intro)
 
-- 📚 Resources
-  
-  - [Test generator](https://playwright.dev/docs/codegen)
-
-  - [Page object models](https://playwright.dev/docs/pom)
-
-  - [API testing](https://playwright.dev/docs/api-testing)
- 
-  - [Setting up CI](https://playwright.dev/docs/ci-intro)
-
 
 Happy testing! 🚀
 

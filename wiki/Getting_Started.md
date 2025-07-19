@@ -13,7 +13,7 @@ This document provides step-by-step instructions for setting up, running, and ma
 1) Open terminal inside your project folder to get the latest changes from GitHub:
 
 ```ts
-cd path/to/playwright-github-actions
+cd path/to/playwright-github-repo
 ```
 
 2) Pull the latest code from the main branch of the remote GitHub repository by running:
@@ -141,3 +141,15 @@ npx playwright install
   ```
   
   - See more details on [Reporters](https://playwright.dev/docs/test-reporters)
+
+  - 📚 More Resources
+  
+  - [Test generator](https://playwright.dev/docs/codegen)
+
+  - [Page object models](https://playwright.dev/docs/pom)
+
+  - [API testing](https://playwright.dev/docs/api-testing)
+ 
+  - [Setting up CI](https://playwright.dev/docs/ci-intro)
+
+  - [Parallelism](https://playwright.dev/docs/test-parallel)
