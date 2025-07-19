@@ -1,5 +1,7 @@
 name: PR Check - Compile, Lint, and Test
 on:
+  push:
+    branches: [ main ]
   pull_request:
     branches: [ main ]
   workflow_dispatch:  # Enables manual trigger
