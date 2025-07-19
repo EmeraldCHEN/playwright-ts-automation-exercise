@@ -1,10 +1,11 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
-import { CartPage } from '../pages/CartPage';
-import { SignupPage } from '../pages/SignupPage';
-import { CheckoutPage } from '../pages/CheckoutPage';
+import { config } from '@test.config';
+import { HomePage } from '@HomePage';
+import { CartPage } from '@CartPage';
+import { SignupPage } from '@SignupPage';
+import { CheckoutPage } from '@CheckoutPage';
 import { PaymentPage } from '@PaymentPage';
-import { faker } from '@faker-js/faker';
+import { generateUserData } from '@test-data/userData';
 
 test('Test Case 14: Place Order - Register while Checkout', async ({ page }) => {
   const homePage = new HomePage(page);
@@ -12,78 +13,66 @@ test('Test Case 14: Place Order - Register while Checkout', async ({ page }) => 
   const signupPage = new SignupPage(page);
   const checkoutPage = new CheckoutPage(page);
   const paymentPage = new PaymentPage(page);
+  const userData = generateUserData();
 
-  // Test data
-  const userData = {
-    name: faker.person.firstName(),
-    email: faker.internet.email(),
-    password: faker.internet.password(),
-    address: faker.location.streetAddress(),
-    state: 'Auckland',
-    city: 'Auckland',
-    zip: '1010',
-    mobile: faker.phone.number('02########'),
-    comment: 'Please deliver ASAP',
-    cardName: faker.person.fullName(),
-    cardNumber: '4111111111111111',
-    cvc: '123',
-    expiryMonth: '12',
-    expiryYear: '2026'
-  };
+  // Step 1-3: Launch browser & Navigate to home page & Verify that home page is visible successfully
+  await homePage.navigateTo(config.baseURL);
+  await expect(homePage.homeBanner).toBeVisible({ timeout: 10000 });
 
-  // 1-3. Launch & Navigate
-  await homePage.goto();
-  await expect(homePage.homeBanner).toBeVisible();
-
-  // 4-5. Add products to cart and go to cart
-  await homePage.addFirstProductToCart();
+  // Step 4-5: Add products to cart & Click 'Cart' button
+  await homePage.addMultipleProductsToCart(2); // Adds first 2 products to cart
   await homePage.viewCart();
 
-  // 6. Verify cart page
-  await expect(cartPage.cartHeader).toContainText('Shopping Cart');
+  // Step 6: Verify that cart page is displayed
+  await cartPage.verifyCartPageDisplayed();
 
-  // 7. Click Proceed to Checkout
+  // Step 7: Click Proceed To Checkout
   await cartPage.proceedToCheckout();
 
-  // 8. Click Register/Login
+  // Step 8: Click 'Register / Login' button
   await cartPage.clickRegisterLogin();
 
-  // 9. Fill details and create account
+  // Step 9: Fill all details in Signup and create account
   await signupPage.register(userData);
 
-  // 10. Verify account created
-  await expect(signupPage.accountCreatedMessage).toHaveText('ACCOUNT CREATED!');
+  // Step 10: Verify 'ACCOUNT CREATED!' and click 'Continue' button
+  await expect(signupPage.accountCreatedMessage).toBeVisible();
   await signupPage.continueAfterAccountCreation();
+  await expect(signupPage.accountCreatedMessage).toHaveText('ACCOUNT CREATED!');
 
-  // 11. Verify user is logged in
-  await expect(homePage.loggedInAs).toContainText(userData.name);
+  // Step 11: Verify 'Logged in as username' at top
+  await homePage.loggedInAs(userData.name);
 
-  // 12-13. Go back to cart and checkout
+  // Step 12-13: Click 'Cart' button and then 'Proceed To Checkout' button
   await homePage.viewCart();
   await cartPage.proceedToCheckout();
 
-  // 14. Verify address and review order
+  // Step 14: Verify address details and review the order
   await checkoutPage.verifyAddress(userData);
-  await checkoutPage.addComment(userData.comment);
+
+  // Step 15: Enter description in comment text area and click 'Place Order'
+  await checkoutPage.addComment(userData.comment); 
   await checkoutPage.placeOrder();
 
-  // 16. Enter payment details
+  // Step 16: Enter payment details: Name on Card, Card Number, CVC, Expiration date
   await paymentPage.enterPaymentDetails({
-    name: userData.cardName,
-    cardNumber: userData.cardNumber,
-    cvc: userData.cvc,
-    expiryMonth: userData.expiryMonth,
-    expiryYear: userData.expiryYear
-  });
+  name: userData.cardName,
+  cardNumber: userData.cardNumber,
+  cvc: userData.cvc,
+  expiryMonth: userData.expiryMonth,
+  expiryYear: userData.expiryYear,
+});
 
-  // 17. Click confirm
+  // Step 17: Click 'Pay and Confirm Order' button
   await paymentPage.confirmOrder();
 
-  // 18. Verify success message
-  await expect(paymentPage.successMessage).toContainText('Your order has been placed successfully!');
+  // Step 18: Verify success message 'Your order has been placed successfully!'
+  await paymentPage.verifySuccessMessage();
 
-  // 19-20. Delete account
+  // Step 19: Click 'Delete Account' button
   await homePage.deleteAccount();
-  await expect(signupPage.accountDeletedMessage).toHaveText('ACCOUNT DELETED!');
+
+  // Step 20: Verify 'ACCOUNT DELETED!' and click 'Continue' button
+  await expect(signupPage.accountDeletedMessage).toBeVisible();
   await signupPage.continueAfterAccountDeletion();
 });

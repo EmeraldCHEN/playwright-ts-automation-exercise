@@ -5,8 +5,14 @@
     "moduleResolution": "Node",
     "baseUrl": ".",
     "paths": {
-      "@PaymentPage": ["ui/pages/PaymentPage"],
+      "@BasePage": ["ui/pages/BasePage"],
       "@HomePage": ["ui/pages/HomePage"],
+      "@SignupPage": ["ui/pages/SignupPage"],    
+      "@CartPage": ["ui/pages/CartPage"],
+      "@CheckoutPage": ["ui/pages/CheckoutPage"],
+      "@PaymentPage": ["ui/pages/PaymentPage"],
+      "@test-data/userData": ["ui/test-data/userData"],
+      "@test.config": ["configs/test.config.ts"],
       "@utils/*": ["utilities/*"]
       // Add other explicit aliases as needed to keep imports clear, maintainable, and IDE-friendly
     },
@@ -14,7 +20,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true, 
-    "noEmit": true,
-    "include": ["**/*.ts", "playwright.config.ts"]
-  }
+    "noEmit": true
+  },
+  "include": ["**/*.ts", "playwright.config.ts"]
 }

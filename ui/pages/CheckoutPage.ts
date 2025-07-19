@@ -1,18 +1,46 @@
-import { expect, Page } from '@playwright/test';
+import { expect, Locator, Page } from '@playwright/test';
+import { BasePage } from '@BasePage';
 
-export class CheckoutPage {
-  constructor(private page: Page) {}
+export class CheckoutPage extends BasePage {
+  readonly deliveryAddressBox: Locator;
+  readonly billingAddressBox: Locator;
+  readonly reviewOrderBox: Locator;
+  readonly commentInput: Locator;
+  readonly placeOrderButton: Locator;
 
-  async verifyAddress(userData: { name: string; address: string }) {
-    await expect(this.page.getByText(userData.name)).toBeVisible();
-    await expect(this.page.getByText(userData.address)).toBeVisible();
+  constructor(page: Page) {
+    super(page);
+
+    // Adjust selectors based on actual page structure
+    this.deliveryAddressBox = page.locator('h2:has-text("Delivery Address")').locator('..'); 
+    this.billingAddressBox = page.locator('h2:has-text("Billing Address")').locator('..');
+    this.reviewOrderBox = page.locator('.order_info');  // example selector, adjust as needed
+
+    this.commentInput = page.locator('textarea[name="message"]');
+    this.placeOrderButton = page.getByRole('button', { name: 'Place Order' });
+  }
+
+  async verifyAddress(userData: { name: string; address: string; city: string; state: string; zip: string; mobile: string; }) {
+    await expect(this.deliveryAddressBox).toContainText(userData.name);
+    await expect(this.deliveryAddressBox).toContainText(userData.address);
+    await expect(this.deliveryAddressBox).toContainText(userData.city);
+    await expect(this.deliveryAddressBox).toContainText(userData.state);
+    await expect(this.deliveryAddressBox).toContainText(userData.zip);
+    await expect(this.deliveryAddressBox).toContainText(userData.mobile);
+
+    await expect(this.billingAddressBox).toContainText(userData.name);
+    await expect(this.billingAddressBox).toContainText(userData.address);
+    await expect(this.billingAddressBox).toContainText(userData.city);
+    await expect(this.billingAddressBox).toContainText(userData.state);
+    await expect(this.billingAddressBox).toContainText(userData.zip);
+    await expect(this.billingAddressBox).toContainText(userData.mobile);
   }
 
   async addComment(comment: string) {
-    await this.page.locator('textarea[name="message"]').fill(comment);
+    await this.commentInput.fill(comment);
   }
 
   async placeOrder() {
-    await this.page.getByRole('button', { name: 'Place Order' }).click();
+    await this.placeOrderButton.click();
   }
 }
