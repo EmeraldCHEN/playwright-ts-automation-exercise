@@ -2,6 +2,7 @@ name: PR Check - Compile, Lint, and Test
 on:
   pull_request:
     branches: [ main ]
+  workflow_dispatch:  # Enables manual trigger
 jobs:
   build-and-test:
     timeout-minutes: 30
