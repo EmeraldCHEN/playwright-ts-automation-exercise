@@ -8,7 +8,7 @@ export class HomePage extends BasePage {
     super(page); // initialize BasePage with page
 
     // The main carousel/banner area on the homepage
-    this.homeBanner = page.locator('.carousel-inner');
+    this.homeBanner = page.locator('.carousel-inner').nth(0);
   }
 
   readonly header = {
@@ -23,12 +23,20 @@ export class HomePage extends BasePage {
   };
 
   async addMultipleProductsToCart(count: number) {
-    const addButtons = await this.products.addToCartButtons;
+    const addButtons = this.products.addToCartButtons;
     const total = await addButtons.count();
     const limit = Math.min(count, total);
 
     for (let i = 0; i < limit; i++) {
-      await addButtons.nth(i).click();
+      const button = addButtons.nth(i);
+      await button.scrollIntoViewIfNeeded();
+
+      // Wait until no blocking elements are in front
+      await button.waitFor({ state: 'visible' });
+      await expect(button).toBeEnabled();
+      await button.click({ force: true }); // Use `force: true` only as a surgical workaround
+
+      await this.products.continueShoppingButton.waitFor({ state: 'visible'}); 
       await this.products.continueShoppingButton.click();
     }
   }
