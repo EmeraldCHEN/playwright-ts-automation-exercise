@@ -4,7 +4,7 @@ on:
     branches: [ main ]
   workflow_dispatch:  # Enables manual trigger
 jobs:
-  build-and-test:
+  test:
     timeout-minutes: 30
     runs-on: ubuntu-latest
 
