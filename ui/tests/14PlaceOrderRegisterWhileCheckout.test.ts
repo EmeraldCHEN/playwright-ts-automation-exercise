@@ -20,7 +20,7 @@ test('Test Case 14: Place Order - Register while Checkout', async ({ page }) => 
   await expect(homePage.homeBanner).toBeVisible();
 
   // Step 4-5: Add products to cart & Click 'Cart' button
-  await homePage.addMultipleProductsToCart(1); // Add first 1 product to cart, will update the test code later to add more than 1 product if time permits 
+  await homePage.addMultipleProductsToCart(1); // Add first 1 product to cart for now, update test to handle multiple products when time permits
   await homePage.viewCart();
 
   // Step 6: Verify that cart page is displayed
