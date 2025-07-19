@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Provide a description of the purpose of this document.
+This document provides step-by-step instructions for setting up, running, and maintaining Playwright tests.
 
 ## Getting the Latest Code
 
@@ -79,8 +79,17 @@ npx playwright install
   npx playwright test
   ```
 
-  ![Test Result](image.png)
-  
+ ![Test Result](../images/image1.png)
+
+
+  - To run UI tests for a specific browser, e.g. Chromium
+
+  ```ts
+  ENV=dev npx playwright test ui/* --project=chromium
+  ```
+
+  ![Test Result](../images/image2.png)
+
   - To run API tests 
   
   ```ts
@@ -132,13 +141,3 @@ npx playwright install
   ```
   
   - See more details on [Reporters](https://playwright.dev/docs/test-reporters)
-
-## Additional Details
-
-Provide any other details you find pertinent, such as troubleshooting tips, common issues, or additional setup steps.
-
----
-
-## Links
-
-[README](README.md) | [EXERCISE](EXERCISE.md) | [ISSUES](ISSUES.md) | [FEEDBACK](FEEDBACK.md)
