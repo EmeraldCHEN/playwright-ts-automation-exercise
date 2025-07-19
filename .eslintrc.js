@@ -1,11 +1,25 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  plugins: [
+    '@typescript-eslint', 
+    'import'
+  ],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/typescript'
+  ],
   env: {
     node: true,
     browser: true,
     es2021: true,
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {
+        project: './tsconfig.json'
+      },
+    },
   },
   rules: {
     semi: ['error', 'always'],
