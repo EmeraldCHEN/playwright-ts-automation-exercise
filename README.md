@@ -24,20 +24,30 @@ project-root/
 ├── ISSUES.md
 └── FEEDBACK.md
 
-## Run Playwright Rests in Headed Mode
+## Run Playwright Rests 
 
-To run your Playwright tests in headed mode, where you can visually observe the browser as it interacts with your app, just add the --headed flag to your test command:
+To run Playwright UI and API tests in headless mode
 
-ENV=dev npx playwright test --headed
+ENV=dev npx playwright test
+
+![Test Result](image.png)
+
+To run Playwright API tests 
+
+`ENV=dev npx playwright test api/*`
+
+To run Playwright UI tests in headed mode, where you can visually observe the browser as it interacts with your app, just add the --headed flag to your test command:
+
+ENV=dev npx playwright test ui/* --headed
 
 
 🎯 What this does:
 - Launches the browser with a visible UI (instead of running headless).
 - Useful for debugging or observing animations, UI transitions, and dynamic behaviors.
 
-🔧 Bonus: Combine with --debug for supercharged inspection
+🔧 Bonus: Combine with `--debug` for supercharged inspection
 
-ENV=dev npx playwright test --headed --debug
+ENV=dev npx playwright test ui/* --headed --debug
 
 
 This opens the [Playwright Inspector]("https://playwright.dev/docs/debug") so you can pause, step through, and review each action interactively.
