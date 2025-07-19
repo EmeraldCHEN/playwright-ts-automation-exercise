@@ -3,11 +3,11 @@
     "target": "ESNext",
     "module": "CommonJS",
     "moduleResolution": "Node",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@PaymentPage": ["../pages/PaymentPage"],
-      "@HomePage": ["src/pages/HomePage"],
-      "@utils/*": ["src/utilities/*"]
+      "@PaymentPage": ["ui/pages/PaymentPage"],
+      "@HomePage": ["ui/pages/HomePage"],
+      "@utils/*": ["utilities/*"]
       // Add other explicit aliases as needed to keep imports clear, maintainable, and IDE-friendly
     },
     "strict": true,
@@ -15,6 +15,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true, 
     "noEmit": true,
-    "include": ["src/**/*.ts", "playwright.config.ts"]
+    "include": ["**/*.ts", "playwright.config.ts"]
   }
 }
