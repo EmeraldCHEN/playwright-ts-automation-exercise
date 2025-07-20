@@ -104,22 +104,29 @@ npx playwright install
   
 
   
-  - To run API tests 
+  - To run API tests in `dev` environment using `Git Bash`
   
   ```ts
   ENV=dev npx playwright test api/*
   ```
 
+  - To run API tests in `dev` environment using `PowerShell` or the Windows Command Prompt, 
+  
+  ```ts
+  $env:ENV="dev"
+  npx playwright test api/*
+  ```
+
   - To run a specific test file
   
   ```ts
-  ENV=dev npx playwright test tests/example.test.ts
+  npx playwright test tests/example.test.ts
   ```
   
   - To run UI tests in headed mode, where you can visually observe the browser as it interacts with your app, just add the --headed flag to your test command:
   
   ```ts
-  ENV=dev npx playwright test ui/* --headed
+  npx playwright test ui/* --headed
   ```
   
   🎯 What this does:
