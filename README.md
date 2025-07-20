@@ -11,7 +11,9 @@ Practice project for UI & API test automation using Playwright in TypeScript, wi
     - test.config.ts            => Configuration files (e.g., test environments, global settings)
   - env/                        => Configure environment settings
     - .env.dev
-    - .env.test        
+    - .env.test 
+  - utilities    => Check environment, etc.
+    - ......      
   - ui/        => UI related test code
     - pages/                 => Page Object Model (POM) classes for UI pages
       - HomePage.ts
@@ -39,9 +41,11 @@ Practice project for UI & API test automation using Playwright in TypeScript, wi
 
 ## More Info
 
-- Run Playwright tests => See [Getting Started](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/wiki/Getting_Started.md)
+- [Getting Started](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/wiki/Getting_Started.md)
 
-- Playwright docs => See [Playwright Docs](https://playwright.dev/docs/intro)
+- [Documented Issues](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/wiki/Issues.md)
+
+- [Playwright Docs](https://playwright.dev/docs/intro)
 
 
 Happy testing! 🚀

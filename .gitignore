@@ -11,10 +11,6 @@ logs/
 *.log
 npm-debug.log*
 
-# Environment variables => Keep credentials and API keys/secrets safe
-.env
-.env.*
-
 # OS-specific
 .DS_Store
 Thumbs.db
