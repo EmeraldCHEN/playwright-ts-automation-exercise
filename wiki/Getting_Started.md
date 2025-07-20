@@ -187,7 +187,7 @@ npx playwright install
   ```ts 
   git rm -r --cached node_modules/
   git commit -m "Remove node_modules from repo"
-  git push
+  git push origin [branch]
   ```
 
   - 📚 More Resources
