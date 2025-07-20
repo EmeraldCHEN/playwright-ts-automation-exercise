@@ -140,7 +140,7 @@ npx playwright install
   npx playwright test ui/* --ui
   ```
 
-  - To manually trigger tests by dispatching a workflow in GitHub Actions
+  ✅ To manually trigger tests by dispatching a workflow in GitHub Actions
 
     - Go to [GitHub Actions](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/actions/workflows/playwright.yml)
 
@@ -148,6 +148,9 @@ npx playwright install
 
     ![Workflow](../images/image3.png)
 
+    - Can cancel the test run if needed
+
+    ![Cancel test run](../images/image4.png)
 
 
   🧪 Using `.only()` for specific test(s), e.g.
