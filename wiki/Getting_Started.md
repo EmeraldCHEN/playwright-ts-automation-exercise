@@ -110,10 +110,17 @@ npx playwright install
   ENV=dev npx playwright test api/*
   ```
 
-  - To run API tests in `dev` environment using `PowerShell` or the Windows Command Prompt, 
+  - To run API tests in `dev` environment using `PowerShell` 
   
   ```ts
   $env:ENV="dev"
+  npx playwright test api/*
+  ```
+
+  - To run API tests in `dev` environment using the Windows Command Prompt (CMD)
+  
+  ```ts
+  set ENV=dev
   npx playwright test api/*
   ```
 
@@ -149,15 +156,15 @@ npx playwright install
 
   ✅ To manually trigger tests by dispatching a workflow in GitHub Actions
 
-    - Go to [GitHub Actions](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/actions/workflows/playwright.yml)
+  - Go to [GitHub Actions](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/actions/workflows/playwright.yml)
 
-    - Click the Run workflow button and select a feature branch if you don’t want to run it on the main branch
+  - Click the Run workflow button and select a feature branch if you don’t want to run it on the main branch
 
-    ![Workflow](../images/image3.png)
+  ![Workflow](../images/image3.png)
 
-    - Can cancel the test run if needed
+  - Can cancel the test run if needed
 
-    ![Cancel test run](../images/image4.png)
+  ![Cancel test run](../images/image4.png)
 <!-- 
   // Skip running `npm run lint` for now
   
