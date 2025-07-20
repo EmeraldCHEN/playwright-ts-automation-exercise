@@ -216,3 +216,10 @@ npx playwright install
   - [UI Mode](https://playwright.dev/docs/test-ui-mode)
 
   - [TypeScript](https://playwright.dev/docs/test-typescript)
+
+
+---
+
+## Links
+
+[README](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/README.md) | [EXERCISE](EXERCISE.md) |  | [ISSUES](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/wiki/Issues.md)
