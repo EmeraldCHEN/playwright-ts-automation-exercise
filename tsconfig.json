@@ -15,6 +15,8 @@
       "@test-data/userData": ["ui/test-data/userData"],
       "@test.config": ["configs/test.config.ts"],
       "@UserClient": ["api/clients/userClient"],
+      "@utils/envCheck": ["utilities/envCheck"],
+      "@utils/globalSetup": ["utilities/globalSetup"],
       // Add other explicit aliases as needed to keep imports clear, maintainable, and IDE-friendly
     },
     "strict": true,
