@@ -22,14 +22,26 @@ cd path/to/playwright-github-repo
 git pull origin main
 ```
 
-✅ Optional: Check Branch or Switch
+✅ Optional: 
+
+1) Check Branch or Switch
 
 - If you're working on a feature branch, check or switch:
 
 ```ts
 git branch         # See current branch
 git fetch          # Update remote info
-git checkout main  # Switch to main branch
+git checkout main  # Switch to the main branch
+```
+
+2) Finish your branch work → switch to `main` → merge → push
+
+- If you complete work in a feature branch, move back to `main`, merge your changes, and push them so they're reflected remotely
+
+```ts
+git checkout main    
+git merge [branch]    
+git push origin main  
 ```
 
 ## How to deploy it locally
@@ -96,7 +108,7 @@ npx playwright install
   ENV=dev npx playwright test api/*
   ```
 
-  - To run a Specific Test File
+  - To run a specific test file
   
   ```ts
   ENV=dev npx playwright test tests/example.test.ts
@@ -120,6 +132,16 @@ npx playwright install
   
   - This opens the [Playwright Inspector](https://playwright.dev/docs/debug) so you can pause, step through, and review each action interactively.
 
+  - To manually trigger tests by dispatching a workflow in GitHub Actions
+
+    - Go to [GitHub Actions](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/actions/workflows/playwright.yml)
+
+    - Click the Run workflow button and select a feature branch if you don’t want to run it on the main branch
+
+    ![Workflow](../images/image3.png)
+
+
+
   🧪 Using `.only()` for specific test(s), e.g.
 
   ```ts
@@ -142,6 +164,19 @@ npx playwright install
   
   - See more details on [Reporters](https://playwright.dev/docs/test-reporters)
 
+
+  ✅ Update Dependencies in Playwright project with TypeScript & npm
+
+  - Update project dependencies via `npm update` or manually adjusted versions in [`package.json`](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/package.json)
+
+  - Ensured compatibility with latest Playwright, TypeScript, and ESLint versions
+
+  - Ran `npx playwright install` to ensure browser binaries are up to date
+
+  - Verify test execution and linting work as expected
+
+
+  ✅ `.gitignore` Best Practices Summary
 
   - Ensure `.gitignore` file is placed at the root level if you want it applied globally
 
