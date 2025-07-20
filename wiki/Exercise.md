@@ -61,4 +61,4 @@ You can use other packages to complete your exercise; the constraints are specif
 
 ## Links
 
-[README](README.md) | [GETTING_STARTED](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/wiki/Getting_Started.md) | [ISSUES](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/wiki/Issues.md) | [FEEDBACK](FEEDBACK.md)
+[README](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/README.md) | [GETTING_STARTED](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/wiki/Getting_Started.md) | [ISSUES](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/wiki/Issues.md) | [FEEDBACK](FEEDBACK.md)

@@ -151,6 +151,18 @@ npx playwright install
     - Can cancel the test run if needed
 
     ![Cancel test run](../images/image4.png)
+<!-- 
+  // Skip running `npm run lint` for now
+  
+  🔍 Lint code with ESLint
+
+  - Run:
+
+  ```ts
+  npm run lint:fix
+  ```
+
+  This will scan all `.ts` files and automatically apply safe fixes where possible (like indentation, spacing, missing semicolons, etc). -->
 
 
   🧪 Using `.only()` for specific test(s), e.g.

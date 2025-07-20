@@ -1,19 +1,21 @@
-// eslint.config.cjs
-const { FlatCompat } = require("@eslint/eslintrc");
+// eslint.config.js (Flat Config for ESLint 9+ with TypeScript + Playwright)
+import js from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import * as playwright from 'eslint-plugin-playwright';
 
-const compat = new FlatCompat({
-  recommendedConfig: {
-    extends: ["eslint:recommended"],
-  },
-});
-
-module.exports = [
-  ...compat.extends("eslint:recommended", "plugin:@typescript-eslint/recommended"),
+export default [
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
   {
-    parserOptions: {
-      ecmaVersion: 2020,
-      sourceType: "module",
-      project: "./tsconfig.json",
+    files: ['**/*.ts'],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        project: './tsconfig.json',
+      },
+    },
+    plugins: {
+      playwright,
     },
     rules: {
       semi: ["error", "always"],
@@ -22,4 +24,12 @@ module.exports = [
       "@typescript-eslint/no-unused-vars": ["error"],
     },
   },
+  {
+    ignores: [
+      'node_modules',
+      'playwright-report',
+      'test-results',
+    ],
+  },
 ];
+

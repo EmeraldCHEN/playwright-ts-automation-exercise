@@ -4,7 +4,7 @@ export async function isEnvReachable(): Promise<boolean> {
   try {
     const res = await fetch(config.baseURL);
     return res.ok;
-  } catch (err) {
+  } catch {
     return false;
   }
 }

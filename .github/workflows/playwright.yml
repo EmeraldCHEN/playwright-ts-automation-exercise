@@ -25,7 +25,7 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci
 
-      # Skip running `npm run lint` during pull request-triggered GitHub Actions for now
+      # Skip running `npm run lint` for now
       # - name: 🔍 Lint code with ESLint
       #   run: npm run lint 
 

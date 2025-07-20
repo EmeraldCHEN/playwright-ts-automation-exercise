@@ -12,3 +12,10 @@
     - Steps to Reproduce: Comment out line 25, 37 and 54 in [API Testing - Verify Login - API 8/9/10](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/api/tests/verifyLogin.spec.ts), then run the API tests
    
     ![Error: Expected: 404, Received: 200](../images/image5.png)
+
+
+---
+
+## Links
+
+[README](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/README.md) | [EXERCISE](EXERCISE.md) | [GETTING_STARTED](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/wiki/Getting_Started.md) | [Feedback](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/wiki/Feedback.md)

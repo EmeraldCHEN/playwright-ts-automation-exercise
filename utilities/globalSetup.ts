@@ -8,7 +8,7 @@ async function globalSetup() {
   const reachable = await isEnvReachable();
 
   if (!reachable) {
-    console.warn(`\n⚠️ Test environment not reachable: skipping all tests.\n`);
+    // console.warn('\n⚠️ Test environment not reachable: skipping all tests.\n');
     process.exit(1); // ❌ Exit Playwright before running any tests
   }
 }

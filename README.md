@@ -45,6 +45,8 @@ Practice project for UI & API test automation using Playwright in TypeScript, wi
 
 - [Documented Issues](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/wiki/Issues.md)
 
+- [Feedback](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/wiki/Feedback.md)
+
 - [Playwright Docs](https://playwright.dev/docs/intro)
 
 

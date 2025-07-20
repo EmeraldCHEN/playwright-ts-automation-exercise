@@ -11,4 +11,6 @@ Here's a breakdown of how timeouts are scoped and configured in different contex
 | Assertions like `expect().toBeVisible()`| Needs its own explicit timeout                           | `5000ms`    |
 
 
+- Referece: [Timeouts](https://playwright.dev/docs/test-timeouts)
+
 *This file was generated with assistance from AI.*
