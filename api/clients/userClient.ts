@@ -8,7 +8,7 @@ export class UserClient {
 
   constructor(request: APIRequestContext) {
     this.request = request;
-    this.baseUrl = `${config.baseURL}/api`;
+    this.baseUrl = `${config.baseURL}api`;
     this.password = `${config.password}`;
   }
 

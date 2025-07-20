@@ -101,7 +101,9 @@ npx playwright install
   ```
 
   ![Test Result](../images/image2.png)
+  
 
+  
   - To run API tests 
   
   ```ts
@@ -131,6 +133,12 @@ npx playwright install
   ```
   
   - This opens the [Playwright Inspector](https://playwright.dev/docs/debug) so you can pause, step through, and review each action interactively.
+
+  - To run UI tests in UI mode
+
+  ```ts
+  npx playwright test ui/* --ui
+  ```
 
   - To manually trigger tests by dispatching a workflow in GitHub Actions
 
@@ -201,3 +209,7 @@ npx playwright install
   - [Setting up CI](https://playwright.dev/docs/ci-intro)
 
   - [Parallelism](https://playwright.dev/docs/test-parallel)
+
+  - [UI Mode](https://playwright.dev/docs/test-ui-mode)
+
+  - [TypeScript](https://playwright.dev/docs/test-typescript)
