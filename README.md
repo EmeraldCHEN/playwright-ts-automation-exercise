@@ -1,5 +1,22 @@
 # playwright-ts-automation-exercise
-Practice project for UI & API test automation using Playwright in TypeScript, with a modern test structure, Page Object Model (POM), dynamic test data, and GitHub Actions CI integration.
+
+## 🚀 Project Structure & Technologies
+### - Language & Framework 
+
+- TypeScript + Playwright (UI & API testing)
+
+### - Key Features
+
+- Page Object Model (POM):
+  - Encapsulate UI elements and actions for reusability and clarity
+  - Use constructor injection of Playwright’s Page for context
+- Dynamic Test Data:
+  - Leverage `@faker-js/faker` for user data generation (names, emails, addresses, etc.)
+- Environment Configuration:
+  - Store multiple env variables in `.env` files to manage different environments and skip tests if unreachable
+- CI Integration with GitHub Actions
+
+
 
 ## Project Structure (Maintainable & Scalable)
 
