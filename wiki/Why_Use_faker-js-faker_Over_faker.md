@@ -53,4 +53,13 @@ If you want a **stable, future-proof, well-supported faker library**, switch to 
 
 ---
 
+- 📚 References
+
+- [The latest version of the original `faker` package was published 4 years ago](https://www.npmjs.com/package/faker?activeTab=versions)
+
+
+- [The latest version of the `@faker-js/faker` package was published 6 days ago at the time of writing](https://www.npmjs.com/package/@faker-js/faker?activeTab=versions)
+
+
+
 *This file was generated with assistance from AI.*

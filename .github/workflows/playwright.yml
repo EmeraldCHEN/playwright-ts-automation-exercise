@@ -35,6 +35,6 @@ jobs:
       - name: Run type checks
         run: npx tsc -p tsconfig.json --noEmit
         
-      - name: 🧪 Run Playwright tests in DEV env 
-        run: ENV=dev npx playwright test
+      - name: 🧪 Run Playwright tests 
+        run: npx playwright test
 
