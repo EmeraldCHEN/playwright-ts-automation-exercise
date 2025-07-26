@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
+    "target": "ES2020",
+    "module": "ESNext",  
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "@BasePage": ["ui/pages/BasePage"],
@@ -17,13 +18,17 @@
       "@UserClient": ["api/clients/userClient"],
       "@utils/envCheck": ["utilities/envCheck"],
       "@utils/globalSetup": ["utilities/globalSetup"],
+      "@utils/esmGlobals": ["utilities/esmGlobals"],
       // Add other explicit aliases as needed to keep imports clear, maintainable, and IDE-friendly
     },
     "strict": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true, 
+    "skipLibCheck": true,
     "noEmit": true
   },
-  "include": ["**/*.ts", "playwright.config.ts"]
+  "include": ["**/*.ts", "playwright.config.ts"],
+  "exclude": ["node_modules"]
 }
+    

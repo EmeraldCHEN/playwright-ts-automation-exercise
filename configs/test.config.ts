@@ -1,5 +1,6 @@
 import path from 'path';
 import dotenv from 'dotenv';
+import { __dirname } from '@utils/esmGlobals';
 
 // Load .env.dev or .env.test based on ENV variable
 const env = process.env.ENV || 'dev';
