@@ -1,7 +1,7 @@
 /**
  * globalSetup script to check if the environment is reachable before running tests.
  * If not reachable, all tests are skipped by exiting the process early.
-**/
+ **/
 import { isEnvReachable } from '@utils/envCheck';
 
 async function globalSetup() {

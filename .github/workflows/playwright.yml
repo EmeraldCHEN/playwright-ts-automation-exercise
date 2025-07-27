@@ -1,13 +1,13 @@
 name: PR Check - Compile, Lint, and Test
 on:
   # To trigger a GitHub Action only for pull requests for now
-  # push:               
-  #   branches: [ main ]  
+  # push:
+  #   branches: [ main ]
   pull_request:
-    branches: [ main ]
-    
+    branches: [main]
+
   # Enables manual trigger
-  workflow_dispatch:  
+  workflow_dispatch:
 jobs:
   test:
     timeout-minutes: 30
@@ -26,14 +26,13 @@ jobs:
         run: npm ci
 
       - name: 🔍 Lint code with ESLint
-        run: npm run lint 
+        run: npm run lint
 
       - name: 🔧 Install Playwright Browsers
         run: npx playwright install --with-deps
 
       - name: Run type checks
         run: npx tsc -p tsconfig.json --noEmit
-        
+
       - name: 🧪 Run Playwright tests against the Chromium to improve CI efficiency
         run: npx playwright test --project=chromium
-

@@ -18,11 +18,19 @@ export class PaymentPage extends BasePage {
     this.cvcInput = page.locator('input[name="cvc"]');
     this.expiryMonthInput = page.locator('input[name="expiry_month"]');
     this.expiryYearInput = page.locator('input[name="expiry_year"]');
-    this.payAndConfirmButton = page.getByRole('button', { name: 'Pay and Confirm Order' });
+    this.payAndConfirmButton = page.getByRole('button', {
+      name: 'Pay and Confirm Order',
+    });
     this.successMessage = page.getByText('ORDER PLACED');
   }
 
-  async enterPaymentDetails(details: { name: string; cardNumber: string; cvc: string; expiryMonth: string; expiryYear: string; }) {
+  async enterPaymentDetails(details: {
+    name: string;
+    cardNumber: string;
+    cvc: string;
+    expiryMonth: string;
+    expiryYear: string;
+  }) {
     await this.nameOnCardInput.fill(details.name);
     await this.cardNumberInput.fill(details.cardNumber);
     await this.cvcInput.fill(details.cvc);

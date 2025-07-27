@@ -13,8 +13,10 @@ export class CartPage extends BasePage {
     // Common cart elements
     this.cartTitle = page.getByText('Shopping Cart');
     this.cartTable = page.locator('#cart_info_table');
-    this.proceedToCheckoutButton = page.locator('.btn.btn-default.check_out');   
-    this.registerLoginButton = page.getByRole('link', { name: 'Register / Login' });
+    this.proceedToCheckoutButton = page.locator('.btn.btn-default.check_out');
+    this.registerLoginButton = page.getByRole('link', {
+      name: 'Register / Login',
+    });
   }
 
   async verifyCartPageDisplayed() {
@@ -23,7 +25,7 @@ export class CartPage extends BasePage {
   }
 
   async proceedToCheckout() {
-    await this.proceedToCheckoutButton.click(); 
+    await this.proceedToCheckoutButton.click();
   }
 
   async clickRegisterLogin() {

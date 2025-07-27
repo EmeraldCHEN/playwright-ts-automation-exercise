@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "ESNext",  
+    "module": "ESNext",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "@BasePage": ["ui/pages/BasePage"],
       "@HomePage": ["ui/pages/HomePage"],
-      "@SignupPage": ["ui/pages/SignupPage"],    
+      "@SignupPage": ["ui/pages/SignupPage"],
       "@CartPage": ["ui/pages/CartPage"],
       "@CheckoutPage": ["ui/pages/CheckoutPage"],
       "@PaymentPage": ["ui/pages/PaymentPage"],
@@ -18,17 +18,16 @@
       "@UserClient": ["api/clients/userClient"],
       "@utils/envCheck": ["utilities/envCheck"],
       "@utils/globalSetup": ["utilities/globalSetup"],
-      "@utils/esmGlobals": ["utilities/esmGlobals"],
+      "@utils/esmGlobals": ["utilities/esmGlobals"]
       // Add other explicit aliases as needed to keep imports clear, maintainable, and IDE-friendly
     },
     "strict": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "isolatedModules": true, 
+    "isolatedModules": true,
     "skipLibCheck": true,
     "noEmit": true
   },
   "include": ["**/*.ts", "playwright.config.ts"],
   "exclude": ["node_modules"]
 }
-    

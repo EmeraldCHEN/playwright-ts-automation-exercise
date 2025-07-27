@@ -1,6 +1,5 @@
 // Centralize the ES module workaround in a utility module, so you don’t have to repeatedly reimplement it in multiple files like `test.config.ts`
 
-
 import { fileURLToPath } from 'url';
 import path from 'path';
 

@@ -25,11 +25,11 @@ export class SignupPage extends BasePage {
     this.nameInput = page.locator('input[data-qa="signup-name"]');
     this.emailInput = page.locator('input[data-qa="signup-email"]');
     this.signupButton = page.locator('button[data-qa="signup-button"]');
-    this.passwordInput = page.locator('input[data-qa="password"]'); 
-    this.firstNameInput = page.locator('input[data-qa="first_name"]'); 
-    this.lastNameInput = page.locator('input[data-qa="last_name"]'); 
-    this.addressInput = page.locator('input[data-qa="address"]'); 
-    this.stateInput = page.locator('input[data-qa="state"]'); 
+    this.passwordInput = page.locator('input[data-qa="password"]');
+    this.firstNameInput = page.locator('input[data-qa="first_name"]');
+    this.lastNameInput = page.locator('input[data-qa="last_name"]');
+    this.addressInput = page.locator('input[data-qa="address"]');
+    this.stateInput = page.locator('input[data-qa="state"]');
     this.cityInput = page.locator('input[data-qa="city"]');
     this.zipcodeInput = page.locator('input[data-qa="zipcode"]');
     this.mobileNumberInput = page.locator('input[data-qa="mobile_number"]');
@@ -39,7 +39,9 @@ export class SignupPage extends BasePage {
 
     // For account deletion (Step 19-20)
     this.accountDeletedMessage = page.getByText('ACCOUNT DELETED!');
-    this.continueAfterAccountDeletionButton = page.getByRole('link', { name: 'Continue' });
+    this.continueAfterAccountDeletionButton = page.getByRole('link', {
+      name: 'Continue',
+    });
   }
 
   // async login(userData: { name: string; email: string; password: string; }) {
@@ -49,14 +51,22 @@ export class SignupPage extends BasePage {
   //   await this.signupButton.click();
   // }
 
-  
-  async register(userData: { name: string; email: string;}) {
+  async register(userData: { name: string; email: string }) {
     await this.nameInput.fill(userData.name);
     await this.emailInput.fill(userData.email);
     await this.signupButton.click();
   }
 
-  async enterAccountInfo(userData: { password: string; name: string; lastName: string; address: string; state: string; city: string; zip: string; mobile: string}) {
+  async enterAccountInfo(userData: {
+    password: string;
+    name: string;
+    lastName: string;
+    address: string;
+    state: string;
+    city: string;
+    zip: string;
+    mobile: string;
+  }) {
     await this.passwordInput.fill(userData.password);
     await this.firstNameInput.fill(userData.name);
     await this.lastNameInput.fill(userData.lastName);
@@ -67,9 +77,9 @@ export class SignupPage extends BasePage {
     await this.mobileNumberInput.fill(userData.mobile);
   }
 
-   async createAccount(){
+  async createAccount() {
     await this.createAccountButton.click();
-   }
+  }
 
   async continueAfterAccountCreation() {
     await this.continueButton.click();

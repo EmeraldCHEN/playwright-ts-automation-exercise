@@ -14,12 +14,15 @@ export class HomePage extends BasePage {
   readonly header = {
     cartLink: this.page.getByRole('link', { name: 'Cart' }),
     deleteAccountLink: this.page.getByRole('link', { name: 'Delete Account' }),
-    loggedInText: (username: string) => this.page.getByText(`Logged in as ${username}`)
+    loggedInText: (username: string) =>
+      this.page.getByText(`Logged in as ${username}`),
   };
 
   readonly products = {
     addToCartButtons: this.page.locator('.add-to-cart'),
-    continueShoppingButton: this.page.getByRole('button', { name: 'Continue Shopping' }),
+    continueShoppingButton: this.page.getByRole('button', {
+      name: 'Continue Shopping',
+    }),
   };
 
   async addMultipleProductsToCart(count: number) {
@@ -36,7 +39,7 @@ export class HomePage extends BasePage {
       await expect(button).toBeEnabled();
       await button.click({ force: true }); // Use `force: true` only as a surgical workaround
 
-      await this.products.continueShoppingButton.waitFor({ state: 'visible'}); 
+      await this.products.continueShoppingButton.waitFor({ state: 'visible' });
       await this.products.continueShoppingButton.click();
     }
   }

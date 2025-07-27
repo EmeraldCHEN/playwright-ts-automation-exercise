@@ -40,28 +40,25 @@ Below are key reasons why Playwright often outpaces Cypress in execution speed.
 
 ---
 
-
 ## ⚙️ Architecture
 
-| Feature                  | Playwright                           | Cypress                                |
-|--------------------------|--------------------------------------|----------------------------------------|
-| Test execution model     | External node process                | Inside browser as injected scripts     |
-| Native async/await       | ✅ Yes                               | ❌ No (uses command chaining)          |
-| Multiple browser tabs    | ✅ Supported                         | ❌ Not supported                        |
-| Parallelism              | ✅ Built-in with workers             | ⚠️ Needs external setup (Dashboard etc.) |
-| Browser control          | Low-level & high-perf                | High-level, but slower                 |
-
-
+| Feature               | Playwright               | Cypress                                  |
+| --------------------- | ------------------------ | ---------------------------------------- |
+| Test execution model  | External node process    | Inside browser as injected scripts       |
+| Native async/await    | ✅ Yes                   | ❌ No (uses command chaining)            |
+| Multiple browser tabs | ✅ Supported             | ❌ Not supported                         |
+| Parallelism           | ✅ Built-in with workers | ⚠️ Needs external setup (Dashboard etc.) |
+| Browser control       | Low-level & high-perf    | High-level, but slower                   |
 
 ## 📊 Performance Summary
 
-| Feature                        | Playwright               | Cypress                  |
-|-------------------------------|--------------------------|--------------------------|
-| Architecture                  | Single-process           | Dual-process (Node + browser) |
-| Parallel Execution            | Built-in, fast contexts  | Limited, slower isolation    |
-| Browser Control               | DevTools Protocol        | Custom proxy layer       |
-| Auto-wait Handling            | Precise, configurable    | Retry-heavy, less flexible |
-| Headless Execution            | Seamless across browsers | GUI-centric default      |
+| Feature            | Playwright               | Cypress                       |
+| ------------------ | ------------------------ | ----------------------------- |
+| Architecture       | Single-process           | Dual-process (Node + browser) |
+| Parallel Execution | Built-in, fast contexts  | Limited, slower isolation     |
+| Browser Control    | DevTools Protocol        | Custom proxy layer            |
+| Auto-wait Handling | Precise, configurable    | Retry-heavy, less flexible    |
+| Headless Execution | Seamless across browsers | GUI-centric default           |
 
 ---
 
@@ -69,9 +66,4 @@ Below are key reasons why Playwright often outpaces Cypress in execution speed.
 
 Playwright is architecturally designed for **speed and flexibility**, making it a better choice when test execution time and scale matter. While Cypress shines in developer experience and debugging tools, Playwright wins in performance, especially for large or complex test suites.
 
-
-
-🤖 *This file was generated with assistance from AI.*
-
-
-
+🤖 _This file was generated with assistance from AI._

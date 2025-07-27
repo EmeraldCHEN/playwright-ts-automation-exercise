@@ -1,7 +1,8 @@
 # playwright-ts-automation-exercise
 
 ## 🚀 Project Structure & Technologies
-### - Language & Framework 
+
+### - Language & Framework
 
 - TypeScript + Playwright (UI & API testing)
 
@@ -16,45 +17,42 @@
   - Store multiple env variables in `.env` files to manage different environments and skip tests if unreachable
 - CI Integration with GitHub Actions
 
-
-
 ## Project Structure (Maintainable & Scalable)
 
 - playwright-ts-automation-exercise/
   - .github/
     - workflows/
-      - playwright.yml          => Set up GitHub Actions
-  - configs/ 
-    - test.config.ts            => Configuration files (e.g., test environments, global settings)
-  - env/                        => Configure environment settings
+      - playwright.yml => Set up GitHub Actions
+  - configs/
+    - test.config.ts => Configuration files (e.g., test environments, global settings)
+  - env/ => Configure environment settings
     - .env.dev
-    - .env.test 
-  - utilities    => Check environment, etc.
-    - ......      
-  - ui/        => UI related test code
-    - pages/                 => Page Object Model (POM) classes for UI pages
+    - .env.test
+  - utilities => Check environment, etc.
+    - ......
+  - ui/ => UI related test code
+    - pages/ => Page Object Model (POM) classes for UI pages
       - HomePage.ts
       - PaymentPage.ts
       - ......
-    - tests/   => UI test specs
+    - tests/ => UI test specs
       - 14PlaceOrderRegisterWhileCheckout.test.ts
       - 15PlaceOrderRegisterBeforeCheckout.test.ts
-    - test-data/   => Test data and test input files
+    - test-data/ => Test data and test input files
       - userData.ts
-  - api/        => API related test code
-    - clients/                  => API client classes and request wrappers
+  - api/ => API related test code
+    - clients/ => API client classes and request wrappers
       - userClient.ts
-    - tests/   => API test specs
+    - tests/ => API test specs
       - loginAPI.test.ts
-  - wiki/   => Useful info
+  - wiki/ => Useful info
     - ......
   - .gitignore
-  - playwright.config.ts   => Playwright test runner configuration
+  - playwright.config.ts => Playwright test runner configuration
   - package-lock.json
   - package.json
   - tsconfig.json
   - README.md
-    
 
 ## More Info
 
@@ -66,10 +64,4 @@
 
 - [Playwright Docs](https://playwright.dev/docs/intro)
 
-
 Happy testing! 🚀
-
-
-
-
-

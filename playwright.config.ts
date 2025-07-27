@@ -10,7 +10,7 @@ export default defineConfig({
   expect: {
     timeout: 10000, // Global timeout for all expect() assertions
   },
-    projects: [
+  projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },

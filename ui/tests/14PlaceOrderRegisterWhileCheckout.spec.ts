@@ -7,7 +7,9 @@ import { CheckoutPage } from '@CheckoutPage';
 import { PaymentPage } from '@PaymentPage';
 import { generateUserData } from '@test-data/userData';
 
-test('Test Case 14: Place Order - Register while Checkout', async ({ page }) => {
+test('Test Case 14: Place Order - Register while Checkout', async ({
+  page,
+}) => {
   const homePage = new HomePage(page);
   const cartPage = new CartPage(page);
   const signupPage = new SignupPage(page);
@@ -40,7 +42,7 @@ test('Test Case 14: Place Order - Register while Checkout', async ({ page }) => 
   // Step 10: Verify 'ACCOUNT CREATED!' and click 'Continue' button
   await expect(signupPage.accountCreatedMessage).toBeVisible();
   await signupPage.continueAfterAccountCreation();
-  
+
   // Step 11: Verify 'Logged in as username' at top
   await homePage.loggedInAs(userData.name);
 
@@ -52,7 +54,7 @@ test('Test Case 14: Place Order - Register while Checkout', async ({ page }) => 
   await checkoutPage.verifyAddress(userData);
 
   // Step 15: Enter description in comment text area and click 'Place Order'
-  await checkoutPage.addComment(userData.comment); 
+  await checkoutPage.addComment(userData.comment);
   await checkoutPage.placeOrder();
 
   // Step 16: Enter payment details: Name on Card, Card Number, CVC, Expiration date

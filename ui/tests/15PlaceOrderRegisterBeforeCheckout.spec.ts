@@ -8,7 +8,9 @@ import { CheckoutPage } from '@CheckoutPage';
 import { PaymentPage } from '@PaymentPage';
 import { generateUserData } from '@test-data/userData';
 
-test('Test Case 15: Place Order - Register before Checkout', async ({ page }) => {
+test('Test Case 15: Place Order - Register before Checkout', async ({
+  page,
+}) => {
   const navbar = new Navbar(page);
   const homePage = new HomePage(page);
   const cartPage = new CartPage(page);
@@ -28,7 +30,7 @@ test('Test Case 15: Place Order - Register before Checkout', async ({ page }) =>
   await signupPage.register(userData);
   await signupPage.enterAccountInfo(userData);
   await signupPage.createAccount();
-  
+
   // Step 6: Verify 'ACCOUNT CREATED!' and click 'Continue' button
   await expect(signupPage.accountCreatedMessage).toBeVisible();
   await signupPage.continueAfterAccountCreation();
@@ -42,7 +44,7 @@ test('Test Case 15: Place Order - Register before Checkout', async ({ page }) =>
 
   // Step 10: Verify that cart page is displayed
   await cartPage.verifyCartPageDisplayed();
-  
+
   // Step 11: Click Proceed To Checkout
   await cartPage.proceedToCheckout();
 
@@ -50,7 +52,7 @@ test('Test Case 15: Place Order - Register before Checkout', async ({ page }) =>
   await checkoutPage.verifyAddress(userData);
 
   // Step 13: Enter description in comment text area and click 'Place Order'
-  await checkoutPage.addComment(userData.comment); 
+  await checkoutPage.addComment(userData.comment);
   await checkoutPage.placeOrder();
 
   // Step 14: Enter payment details: Name on Card, Card Number, CVC, Expiration date
@@ -70,7 +72,7 @@ test('Test Case 15: Place Order - Register before Checkout', async ({ page }) =>
 
   // Step 17: Click 'Delete Account' button
   await homePage.deleteAccount();
-  
+
   // Step 18: Verify 'ACCOUNT DELETED!' and click 'Continue' button
   await expect(signupPage.accountDeletedMessage).toBeVisible();
   await signupPage.continueAfterAccountDeletion();
