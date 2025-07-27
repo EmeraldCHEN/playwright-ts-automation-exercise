@@ -24,4 +24,4 @@
 
 
 
-*This file was generated with assistance from AI.*
+🤖 *This file was generated with assistance from AI.*

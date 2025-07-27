@@ -61,4 +61,6 @@ Before reaching for `force: true`, consider these strategies:
 These techniques help preserve test integrity and better reflect real user interactions.
 
 
-*This file was generated with assistance from AI.*
+
+
+🤖 *This file was generated with assistance from AI.*

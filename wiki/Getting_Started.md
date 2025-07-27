@@ -68,7 +68,7 @@ cd playwright-github-actions
 2. Install Dependencies
 
 ```ts
-npm install
+npm ci
 ```
 
 3. Check Playwright Installation

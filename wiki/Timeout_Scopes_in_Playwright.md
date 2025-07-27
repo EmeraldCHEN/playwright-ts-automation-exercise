@@ -13,4 +13,6 @@ Here's a breakdown of how timeouts are scoped and configured in different contex
 
 - Referece: [Timeouts](https://playwright.dev/docs/test-timeouts)
 
-*This file was generated with assistance from AI.*
+
+
+🤖 *This file was generated with assistance from AI.*

@@ -62,4 +62,4 @@ If you want a **stable, future-proof, well-supported faker library**, switch to 
 
 
 
-*This file was generated with assistance from AI.*
+🤖 *This file was generated with assistance from AI.*

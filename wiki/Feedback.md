@@ -14,6 +14,7 @@
 - Feedback 2:
   - Description: When running `npm run lint`, some errors occurred because the ESLint configuration was not fully set up to support TypeScript files. Due to time constraints, I was unable to adjust the linting setup to properly handle TypeScript, so linting is currently skipped in the CI pipeline. This should be addressed in future to ensure proper code quality checks.
 
+  - UPDATE: Fix: __dirname is not defined in ES module scope in the feature branch: `feature/eslint-and-more` by adding "type": "module" in `package.json` file. Without doing that, `eslint.config.js` won't be treated as ESM unless renamed to `eslint.config.mjs` which isn't ideal for tooling consistency.
 
 
 ---
