@@ -19,8 +19,9 @@
   },
   "scripts": {
     "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --fix",   
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky install",
     "typecheck": "tsc --noEmit"
   },
-  "type": "module" 
+  "type": "module"
 }
