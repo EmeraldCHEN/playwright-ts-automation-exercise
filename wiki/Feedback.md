@@ -27,6 +27,10 @@
     - Prettier is highly recommended if you want automated formatting in your workflow (especially for team projects or professional automation code)
 
   - Configure API tests for headless mode
+
+  - Configure HTML test report
+
+
 ---
 
 ## Links
