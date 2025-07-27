@@ -30,6 +30,8 @@
 
   - Configure HTML test report
 
+  - Add a changelog file
+
 
 ---
 
