@@ -12,6 +12,13 @@ export default defineConfig({
   },
   projects: [
     {
+      name: 'API Tests',
+      testMatch:  ['api/tests/**/*.spec.ts'],
+      use: {
+        browserName: undefined, // 🚫 Run API tests without launching any browsers
+      },
+    },
+    {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },

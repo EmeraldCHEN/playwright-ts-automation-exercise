@@ -96,10 +96,18 @@ npx playwright test
 - To run UI tests for a specific browser, e.g. Chromium
 
 ```ts
-ENV=dev npx playwright test ui/* --project=chromium
+npx playwright test ui/* --project=chromium
 ```
 
 ![Test Result](../images/image2.png)
+
+
+- To run API tests without launching any browsers and minimize workers to speed up results
+
+```ts
+npx playwright test api --project="API Tests" --workers=1
+```
+
 
 - To run API tests in `dev` environment using `Git Bash`
 
