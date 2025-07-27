@@ -31,4 +31,5 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     },
   ],
+  reporter: [['html', { open: 'never' }]],
 });
