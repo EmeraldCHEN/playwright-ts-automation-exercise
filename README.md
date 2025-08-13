@@ -58,10 +58,6 @@
 
 - [Getting Started](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/wiki/Getting_Started.md)
 
-- [Documented Issues](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/wiki/Issues.md)
-
-- [Feedback](https://github.com/EmeraldCHEN/playwright-ts-automation-exercise/blob/main/wiki/Feedback.md)
-
 - [Playwright Docs](https://playwright.dev/docs/intro)
 
 Happy testing! 🚀
